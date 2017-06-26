@@ -1,7 +1,7 @@
 ## Getting and Cleaning Data
 ## Final Project
 ## Student:  Javier Navarro B.
-## Date:  June 17, 2017
+## Date:  June 26, 2017
 
 ## STEP 1:  Merges the training and the test sets to create one data set.
 ## Train data
@@ -56,7 +56,7 @@ current_colnames <- gsub("BodyBody", "Body", current_colnames)
 colnames(mean_std_act) <- current_colnames
 
 ## STEP 5:  From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-avg_activity_subject <- aggregate(. ~subject_id+activity_id, mean_std_act, mean)
+avg_activity_subject <- aggregate(. ~subject_id+activity_type, mean_std_act, mean)
 avg_activity_subject <- avg_activity_subject[order(avg_activity_subject$activity_type, avg_activity_subject$subject_id),]
 
 
